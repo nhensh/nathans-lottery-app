@@ -1,26 +1,18 @@
-const generate = (size, lowest, highest) => {
+export default function generate(size: number, lowest: number, highest: number) {
 	const numbers = [];
-	for(var i = 0; i < size; i++) {
-		var add = true;
-		var randomNumber = Math.floor(Math.random() * highest) + 1;
-		for(var y = 0; y < highest; y++) {
-			if(numbers[y] == randomNumber) {
-				add = false;
-			}
-		}
-		if(add) {
-			numbers.push(randomNumber);
-		} else {
-			i--;
-		}
+	while(numbers.length < size) {
+		const randomNumber = Math.floor(Math.random() * highest) + 1;
+    if(!numbers.includes( randomNumber)) {
+      numbers.push( randomNumber );
+    }
 	}
   
 	let highestNumber = 0;
-	for(var m = 0; m < numbers.length; m++) {
-		for(var n = m + 1; n < numbers.length; n++) {
-			if(numbers[n] < numbers[m]) {
-				highestNumber = numbers[m];
-				numbers[m] = numbers[n];
+	for(let num of numbers) {
+		for(let n = num + 1; n < numbers.length; n++) {
+			if(numbers[n] < numbers[num]) {
+				highestNumber = numbers[num];
+				numbers[num] = numbers[n];
 				numbers[n] = highestNumber;
 			}
 		}
