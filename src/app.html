@@ -1,4 +1,10 @@
 <template>
   <h1>${appName}</h1>
-  <p>Lottery Numbers ${lotteryNumbers}</p>
+  <h2>Lottery Numbers:</h2>
+  <div class="stage" repeat.for="number of lotteryNumbers">
+    <figure class="ball ball-${number.colour}">
+      <span class="number">${number.number}</span>
+      <span class="shadow"></span>
+    </figure>
+  </div>
 </template>

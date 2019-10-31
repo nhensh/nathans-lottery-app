@@ -20,6 +20,12 @@
       "coverage": false
     }
   },
+  "cssProcessor": {
+    "id": "sass",
+    "displayName": "Sass",
+    "fileExtension": ".scss",
+    "source": "src/**/*.scss"
+  },
   "platform": {
     "hmr": false,
     "open": false,

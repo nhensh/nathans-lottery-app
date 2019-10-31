@@ -1,3 +1,4 @@
+import 'app.scss';
 import generate from './lottery';
 
 export class App {
