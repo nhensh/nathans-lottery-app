@@ -1,3 +1,5 @@
+interface lotteryNumber { number: number, colour: string }
+
 const inRange = (value: number, min: number, max: number) => {
   return value >= min && value <= max;
 }
@@ -22,20 +24,14 @@ export default function generate( size: number, lowest: number, highest: number 
 	while( numbers.length < size ) {
     const randomNumber = Math.floor(Math.random() * highest) + 1;
     if( !numbers.includes( randomNumber) ) {
-      numbers.push( { number: randomNumber, colour: setColours(randomNumber) } );
+      numbers.push( randomNumber );
     }
 	}
-  
-	let highestNumber = 0;
-	for( let num of numbers ) {
-		for( let n = num + 1; n < numbers.length; n++ ) {
-			if( numbers[n] < numbers[num] ) {
-				highestNumber = numbers[num];
-				numbers[num] = numbers[n];
-				numbers[n] = highestNumber;
-			}
-		}
-	}
-  
-	return numbers;
+	return numbers.map(n => { 
+    return { number: n, colour: setColours(n)};
+  });
+}
+
+export function sortOrder(numbers) {
+  return numbers.sort((a, b) => a.number-b.number);
 }

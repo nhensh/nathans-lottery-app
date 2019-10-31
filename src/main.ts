@@ -8,6 +8,10 @@ export function configure(aurelia: Aurelia) {
     .feature(PLATFORM.moduleName('resources/index'));
 
   aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
+  aurelia.use
+    .standardConfiguration()
+    .developmentLogging()
+    .plugin(PLATFORM.moduleName("aurelia-animator-css"));
 
   if (environment.testing) {
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
