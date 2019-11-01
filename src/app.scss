@@ -62,6 +62,11 @@ footer {
   padding: $spacing + px;
 }
 
+/* By creating a ball for the numbers I am using a UX technique called Cultural Probes, 
+ * the user will identify with the ui as the national lottery uses balls to select the 
+ * numbers. This helps inform the user what the application is without having to use a
+ * description
+*/
 .ball {
   text-align: center;
   width: 100%;

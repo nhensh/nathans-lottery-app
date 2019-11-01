@@ -16,6 +16,10 @@
       </div>
     </main>
     <footer>
+      <!-- 
+        By showing the sort button after the numbers have been picked we create a experiance much like the national lottery show 
+        where the numbers are selected and then sorted. This helps the user identify what the aplication is for.
+      -->
       <button class="btn" type="button" if.bind="startIndex === size && !ballsSorted" click.trigger="sortOrder()">Sort Order</button>
     </footer>
   </div>
