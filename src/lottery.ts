@@ -7,15 +7,15 @@ const inRange = (value: number, min: number, max: number) => {
 // TODO: change to switch statement or object literal lookup
 const setColours = (value: number) => {
   if( inRange(value, 1, 9) ) {
-    return 'red';
+    return 'grey';
   } else if( inRange(value, 10, 19) ) {
     return 'blue';
   } else if( inRange(value, 20, 29) ) {
-    return 'yellow';
+    return 'pink';
   } else if( inRange(value, 30, 39) ) {
     return 'green';
   } else if( inRange(value, 40, 49) ) {
-    return 'pink'; 
+    return 'yellow'; 
   }
 };
 

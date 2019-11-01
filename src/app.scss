@@ -1,8 +1,8 @@
-$red: #c62828;
+$grey: #616161;
 $blue: #1565c0;
-$yellow: #f9a825;
-$green: #2e7d32;
 $pink: #ad1457;
+$green: #2e7d32;
+$yellow: #f9a825;
 $ballSize: 100;
 $spacing: 15;
 
@@ -109,8 +109,8 @@ footer {
     font-size: 3rem;
   }
 
-  &-red {
-    @include radial-gradient($red)
+  &-grey {
+    @include radial-gradient($grey)
   }
   &-blue {
     @include radial-gradient($blue)
