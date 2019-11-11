@@ -28,4 +28,11 @@ export class App {
     this.displayedNumbers = sortOrder(this.lotteryNumbers)
     this.ballsSorted = true;
   };
+
+  reset() {
+    this.displayedNumbers = [];
+    this.startIndex = 0;
+    this.ballsSorted = false;
+    this.lotteryNumbers = generate(this.size, 1, 49);
+  }
 }

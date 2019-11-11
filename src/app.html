@@ -10,9 +10,10 @@
             <span class="number">${number.number}</span>
           </figure>
         </div>
-        <div class="stage">
-          <button class="btn-ball" type="button" click.trigger="getNumber()" disabled.bind="startIndex >= size">Reveal Number</button>
+        <div class="stage" if.bind="startIndex !== size">
+          <button class="btn-ball" type="button" click.trigger="getNumber()" disbled.bind="startIndex >= size">Reveal Number</button>
         </div>
+       
       </div>
     </main>
     <footer>
@@ -21,6 +22,7 @@
         where the numbers are selected and then sorted. This helps the user identify what the aplication is for.
       -->
       <button class="btn" type="button" if.bind="startIndex === size && !ballsSorted" click.trigger="sortOrder()">Sort Order</button>
+      <button class="btn" type="button" if.bind="startIndex === size && ballsSorted" click.trigger="reset()">Reset</button>
     </footer>
   </div>
 </template>
