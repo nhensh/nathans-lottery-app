@@ -1,6 +1,7 @@
 import {bootstrap} from 'aurelia-bootstrapper';
 import {StageComponent} from 'aurelia-testing';
 import {PLATFORM} from 'aurelia-pal';
+import generate, { sortOrder } from '../../src/lottery';
 
 describe('Stage App Component', () => {
   let component;
@@ -13,10 +14,11 @@ describe('Stage App Component', () => {
 
   afterEach(() => component.dispose());
 
-  it('should render message', done => {
+  it('should generate 6 unique numbers', done => {
     component.create(bootstrap).then(() => {
-      const view = component.element;
-      expect(view.textContent.trim()).toBe('Hello World!');
+      const numbers = generate(6, 1, 49);
+      expect((new Set(numbers)).size !== numbers.length).toBeFalsy();
+      expect( numbers.length).toEqual(6);
       done();
     }).catch(e => {
       fail(e);
